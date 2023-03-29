@@ -14,6 +14,8 @@ import { Toaster } from 'react-hot-toast'
 
 import { Button } from '../Button'
 
+import { NavLink } from 'react-router-dom'
+
 import {
   ButtonsContainer,
   LinkSection,
@@ -27,8 +29,10 @@ import { Input } from '../Input'
 import { toggleTextAlign } from '../../data/toggleData'
 import { Toggle } from '../Toggle'
 import { useToggleContext } from '../../hooks/useToggleContext'
+import { useButtonContext } from '../../hooks/useButtonContext'
 
 export function ButtonsSection() {
+  const { menuActive } = useButtonContext()
   const { handleChangeToggleStatus } = useToggleContext()
 
   return (
@@ -106,11 +110,29 @@ export function ButtonsSection() {
           icon={<Palette size={20} weight="bold" />}
           typeButton="theme"
         />
-        <Button
-          title="Mais"
-          icon={<DotsThreeVertical size={20} weight="bold" />}
-          typeButton="moreOptions"
-        />
+        <div className='menuToggle'>
+          <Button
+
+            title="Mais"
+            icon={<DotsThreeVertical size={20} weight="bold" />}
+            typeButton="moreOptions"
+          />
+          {menuActive && (
+            <ul>
+              <a href="https://github.com/VitorHugoAntunes" target="_blank">
+                <li>Meu Github</li>
+              </a>
+              <a href="https://dribbble.com/shots/15553350-Text-Editor-Light-and-Dark-Mode" target="_blank">
+                <li>Ver este design</li>
+              </a>
+              <NavLink to="/about">
+                <li>Sobre</li>
+              </NavLink>
+            </ul>
+
+          )}
+        </div>
+
       </MoreActionsSection>
     </ButtonsContainer >
   )

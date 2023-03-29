@@ -7,12 +7,14 @@ interface ButtonContextType {
   underlineActive: boolean
   uppercaseActive: boolean
   indentActive: boolean
+  menuActive: boolean
   changeBoldStatus: () => void
   changeItalicStatus: () => void
   changeUnderlineStatus: () => void
   changeUppercaseStatus: () => void
   changeIndentStatus: () => void
   copyTextToClipboard: (text: string) => void
+  changeMenuStatus: () => void
 }
 
 interface ButtonProviderProps {
@@ -27,6 +29,7 @@ export function ButtonProvider({ children }: ButtonProviderProps) {
   const [underlineActive, setUnderlineActive] = useState(false)
   const [uppercaseActive, setUppercaseActive] = useState(false)
   const [indentActive, setIndentActive] = useState(false)
+  const [menuActive, setMenuActive] = useState(false)
 
   function changeBoldStatus() {
     boldActive ? setBoldActive(false) : setBoldActive(true)
@@ -53,6 +56,10 @@ export function ButtonProvider({ children }: ButtonProviderProps) {
     toast.success('Texto copiado com sucesso')
   }
 
+  function changeMenuStatus() {
+    menuActive ? setMenuActive(false) : setMenuActive(true)
+  }
+
   return (
     <ButtonContext.Provider
       value={{
@@ -61,12 +68,14 @@ export function ButtonProvider({ children }: ButtonProviderProps) {
         underlineActive,
         uppercaseActive,
         indentActive,
+        menuActive,
         changeBoldStatus,
         changeItalicStatus,
         changeUnderlineStatus,
         changeUppercaseStatus,
         changeIndentStatus,
-        copyTextToClipboard
+        copyTextToClipboard,
+        changeMenuStatus
       }}
     >
       {children}

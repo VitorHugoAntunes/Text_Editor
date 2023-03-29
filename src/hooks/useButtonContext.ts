@@ -8,12 +8,14 @@ export function useButtonContext() {
     underlineActive,
     uppercaseActive,
     indentActive,
+    menuActive,
     changeItalicStatus,
     changeBoldStatus,
     changeUnderlineStatus,
     changeUppercaseStatus,
     changeIndentStatus,
-    copyTextToClipboard
+    copyTextToClipboard,
+    changeMenuStatus
   } = useContext(ButtonContext)
 
   return {
@@ -22,11 +24,13 @@ export function useButtonContext() {
     underlineActive,
     uppercaseActive,
     indentActive,
+    menuActive,
     changeItalicStatus,
     changeBoldStatus,
     changeUnderlineStatus,
     changeUppercaseStatus,
     changeIndentStatus,
-    copyTextToClipboard
+    copyTextToClipboard,
+    changeMenuStatus
   }
 }

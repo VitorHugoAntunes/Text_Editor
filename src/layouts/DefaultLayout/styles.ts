@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
+export const LayoutContainer = styled.div``
+
 export const EditorContainer = styled.div`
   flex: 1;
   display: flex;
-  align-items: center;
 
   flex-direction: column;
   margin-top: 4rem;
@@ -58,21 +59,4 @@ export const EditorContainer = styled.div`
       }
     }
   }
-`
-
-export const SubmitContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-`
-
-export const SubmitButton = styled.button`
-  width: 10rem;
-  height: 2.5rem;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  background: ${(props) => props.theme['gray-100']};
-  color: ${(props) => props.theme['gray-900']};
-  cursor: pointer;
 `

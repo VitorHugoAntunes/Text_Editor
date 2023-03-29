@@ -18,7 +18,8 @@ export function Button({ icon, typeButton, ...props }: ButtonProps) {
     changeUnderlineStatus,
     changeUppercaseStatus,
     changeIndentStatus,
-    copyTextToClipboard
+    copyTextToClipboard,
+    changeMenuStatus
   } = useButtonContext()
 
   const { text } = useTextAreaContext()
@@ -41,6 +42,8 @@ export function Button({ icon, typeButton, ...props }: ButtonProps) {
         return [handleActiveButton(), changeIndentStatus()]
       case 'copyToClipboard':
         return [copyTextToClipboard(text)]
+      case 'moreOptions':
+        return [handleActiveButton(), changeMenuStatus()]
     }
   }
   return (

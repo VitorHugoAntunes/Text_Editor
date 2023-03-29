@@ -34,6 +34,40 @@ export const ButtonsContainer = styled.div`
     > button:not(:last-child), div:not(:last-child), input:not(:last-child) {
       border-right: 1px solid ${(props) => props.theme['gray-600']};
     }
+
+    > div.menuToggle{
+      position: relative;
+
+      > ul {
+        position: absolute;
+        background: ${props => props.theme['gray-900']};
+        list-style: none;
+        top: 0;
+        left: 4rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: 4px;
+
+        a {
+          text-decoration: none;
+          color: ${props => props.theme['gray-100']};
+        }
+
+        li {
+          padding: 1rem;
+          min-width: 9rem;
+          width: 100%;
+          display:flex;
+          align-items: center;
+          cursor: pointer;
+
+          &:hover {
+            transition: 0.2s;
+            background: ${(props) => props.theme['gray-800']};
+          }
+        }
+      }
+    }
   }
 `
 
