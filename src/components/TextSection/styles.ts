@@ -3,9 +3,12 @@ import styled, { css } from 'styled-components'
 interface TextAreaProps {
   bold?: boolean
   italic?: boolean
+  underline?: boolean
+  uppercase?: boolean
   alignLeft?: boolean
   centerText?: boolean
   alignRight?: boolean
+  indent?: boolean
   fontSize: number
 }
 
@@ -30,6 +33,24 @@ export const TextareaContainer = styled.textarea<TextAreaProps>`
     props.italic === true &&
     css`
       font-style: italic;
+    `}
+
+  ${(props) =>
+    props.underline === true &&
+    css`
+      text-decoration: underline;
+    `}
+
+  ${(props) =>
+    props.uppercase === true &&
+    css`
+      text-transform: uppercase;
+    `}
+
+  ${(props) =>
+    props.indent === true &&
+    css`
+      text-indent: 5rem;
     `}
 
   ${(props) =>

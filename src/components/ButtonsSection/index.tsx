@@ -1,15 +1,16 @@
 import {
   TextBolder,
   TextItalic,
-  ListBullets,
+  TextAa,
   TextIndent,
-  TextOutdent,
   ArrowsOutLineVertical,
-  Image,
-  LinkSimpleHorizontal,
   DotsThreeVertical,
   Palette,
+  TextUnderline,
+  CopySimple,
 } from 'phosphor-react'
+
+import { Toaster } from 'react-hot-toast'
 
 import { Button } from '../Button'
 
@@ -23,7 +24,7 @@ import {
 } from './styles'
 
 import { Input } from '../Input'
-import { toggleTextAlign, toggleTextIndent } from '../../data/toggleData'
+import { toggleTextAlign } from '../../data/toggleData'
 import { Toggle } from '../Toggle'
 import { useToggleContext } from '../../hooks/useToggleContext'
 
@@ -43,12 +44,16 @@ export function ButtonsSection() {
           icon={<TextItalic size={20} weight="bold" />}
           typeButton="italic"
         />
+        <Button
+          title="Texto sublinhado"
+          icon={<TextUnderline size={20} weight="bold" />}
+          typeButton="underline"
+        />
 
-        <Input
-          title="Tamanho de fonte"
-          type="number"
-          typeButton="fontSize"
-          placeholder="14"
+        <Button
+          title="Letra maiúscula"
+          icon={<TextAa size={20} weight="bold" />}
+          typeButton="uppercase"
         />
       </TextStyleSection>
 
@@ -67,11 +72,6 @@ export function ButtonsSection() {
       </TextAlignSection>
       <TextSpacingSection>
         <Button
-          title="Lista"
-          icon={<ListBullets size={20} />}
-          typeButton="bullets"
-        />
-        <Button
           title="Espaçamento de linha"
           icon={<ArrowsOutLineVertical size={20} />}
           typeButton="lineSpacing"
@@ -79,24 +79,25 @@ export function ButtonsSection() {
         <Button
           title="Recuo à esquerda"
           icon={<TextIndent size={20} />}
-          typeButton="identLeft"
-        />
-        <Button
-          title="Recuo à direita"
-          icon={<TextOutdent size={20} />}
-          typeButton="indentRight"
+          typeButton="indent"
         />
       </TextSpacingSection>
       <LinkSection>
-        <Button
-          title="Adicionar imagem"
-          icon={<Image size={20} weight="fill" alt="" />}
-          typeButton="addImage"
+        <Input
+          title="Tamanho de fonte"
+          type="number"
+          typeButton="fontSize"
+          placeholder="14"
         />
+
+        <Toaster
+          position='top-right'
+        />
+
         <Button
-          title="Adicionar link"
-          icon={<LinkSimpleHorizontal size={20} />}
-          typeButton="addLink"
+          title="Copiar para àrea de transferência"
+          icon={<CopySimple size={20} />}
+          typeButton="copyToClipboard"
         />
       </LinkSection>
       <MoreActionsSection>

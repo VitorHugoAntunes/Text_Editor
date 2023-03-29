@@ -18,5 +18,3 @@ export const toggleTextAlign = [
         icon: 'right'
     },
 ]
-
-export const toggleTextIndent = [{}]

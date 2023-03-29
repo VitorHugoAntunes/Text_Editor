@@ -21,17 +21,17 @@ export const ButtonsContainer = styled.div`
       -moz-appearance: textfield;
     }
 
-    > button:first-child, div:first-child{
+    > button:first-child, div:first-child, input:first-child{
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
     }
 
-    > button:last-child, div:last-child {
+    > button:last-child, div:last-child,input:last-child {
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
     }
 
-    > button:not(:last-child), div:not(:last-child) {
+    > button:not(:last-child), div:not(:last-child), input:not(:last-child) {
       border-right: 1px solid ${(props) => props.theme['gray-600']};
     }
   }

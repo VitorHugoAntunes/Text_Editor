@@ -1,6 +1,6 @@
 import { type ButtonHTMLAttributes, type ReactNode, useState } from 'react'
 import { useButtonContext } from '../../hooks/useButtonContext'
-import { useToggleContext } from '../../hooks/useToggleContext'
+import { useTextAreaContext } from '../../hooks/useTextAreaContext'
 
 import { ButtonComponent } from './styles'
 
@@ -15,7 +15,13 @@ export function Button({ icon, typeButton, ...props }: ButtonProps) {
   const {
     changeBoldStatus,
     changeItalicStatus,
+    changeUnderlineStatus,
+    changeUppercaseStatus,
+    changeIndentStatus,
+    copyTextToClipboard
   } = useButtonContext()
+
+  const { text } = useTextAreaContext()
 
   function handleActiveButton() {
     buttonActive === true ? setButtonActive(false) : setButtonActive(true)
@@ -24,13 +30,17 @@ export function Button({ icon, typeButton, ...props }: ButtonProps) {
   function handleChangeButtonStatus(type: string) {
     switch (type) {
       case 'bold':
-        handleActiveButton();
-        changeBoldStatus()
-        break;
+        return [handleActiveButton(), changeBoldStatus()]
       case 'italic':
-        handleActiveButton();
-        changeItalicStatus();
-        break;
+        return [handleActiveButton(), changeItalicStatus()]
+      case 'underline':
+        return [handleActiveButton(), changeUnderlineStatus()]
+      case 'uppercase':
+        return [handleActiveButton(), changeUppercaseStatus()]
+      case 'indent':
+        return [handleActiveButton(), changeIndentStatus()]
+      case 'copyToClipboard':
+        return [copyTextToClipboard(text)]
     }
   }
   return (

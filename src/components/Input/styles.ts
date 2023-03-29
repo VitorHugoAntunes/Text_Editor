@@ -10,8 +10,6 @@ export const InputComponent = styled.input`
   background: ${(props) => props.theme['gray-900']};
   color: ${(props) => props.theme['gray-100']};
   text-align: center;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
 

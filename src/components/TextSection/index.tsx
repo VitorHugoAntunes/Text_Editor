@@ -8,8 +8,7 @@ import { TextareaContainer } from './styles'
 
 export function TextSection() {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
-  const { boldActive, italicActive } =
-    useButtonContext()
+  const { boldActive, italicActive, underlineActive, uppercaseActive, indentActive } = useButtonContext()
   const { fontSize } = useInputContext()
   const { alignLeftActive, centerTextActive, alignRightActive } = useToggleContext();
   const { text, setText } = useTextAreaContext()
@@ -25,10 +24,13 @@ export function TextSection() {
       placeholder="Escreva seu texto aqui..."
       bold={boldActive}
       italic={italicActive}
+      uppercase={uppercaseActive}
+      underline={underlineActive}
       alignLeft={alignLeftActive}
       alignRight={alignRightActive}
       centerText={centerTextActive}
       fontSize={fontSize}
+      indent={indentActive}
       value={text}
       onChange={changeUserText}
     >
