@@ -76,6 +76,7 @@ export const EditorContainer = styled.div`
 
     width: 420px;
     max-width: 100%;
+    margin-top: 1rem;
     padding-left: 0;
     padding-right: 0;
 
@@ -128,7 +129,7 @@ export const EditorContainer = styled.div`
 
   @media (max-width: 450px) {
     /* For mobile phones: */
-    width: 350px;
+    width: 360px;
     max-width: 100%;
 
     #menuList {
