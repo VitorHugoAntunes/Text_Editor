@@ -31,14 +31,18 @@ export const ButtonsContainer = styled.div`
       border-bottom-right-radius: 4px;
     }
 
-    > button:not(:last-child), div:not(:last-child), input:not(:last-child) {
+    > button:not(:last-child), div:first-child, div + div, input:not(:last-child) {
       border-right: 1px solid ${(props) => props.theme['gray-600']};
+    }
+
+    > div:last-child {
+      border: none;
     }
 
     > div.menuToggle{
       position: relative;
 
-      > ul {
+      > ul.menuList {
         position: absolute;
         background: ${props => props.theme['gray-900']};
         list-style: none;

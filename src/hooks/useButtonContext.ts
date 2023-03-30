@@ -15,7 +15,8 @@ export function useButtonContext() {
     changeUppercaseStatus,
     changeIndentStatus,
     copyTextToClipboard,
-    changeMenuStatus
+    changeMenuStatus,
+    setMenuActive
   } = useContext(ButtonContext)
 
   return {
@@ -31,6 +32,7 @@ export function useButtonContext() {
     changeUppercaseStatus,
     changeIndentStatus,
     copyTextToClipboard,
-    changeMenuStatus
+    changeMenuStatus,
+    setMenuActive
   }
 }

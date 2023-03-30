@@ -18,20 +18,20 @@ export function Toggle({ typeInput, icon, ...props }: ToggleProps) {
     switch (icon) {
         case 'left':
             return (
-                <ToggleContainer readOnly {...props} className={toggleActive === 1 ? 'active' : ''}>
+                <ToggleContainer readOnly {...props} className={toggleActive === 1 ? 'toggle active' : 'toggle'}>
                     <TextAlignLeft size={20} />
                 </ToggleContainer>
 
             )
         case 'center':
             return (
-                <ToggleContainer readOnly {...props} className={toggleActive === 2 ? 'active' : ''}>
+                <ToggleContainer readOnly {...props} className={toggleActive === 2 ? 'toggle active' : 'toggle'}>
                     <TextAlignCenter size={20} />
                 </ToggleContainer>
             )
         case 'right':
             return (
-                <ToggleContainer readOnly {...props} className={toggleActive === 3 ? 'active' : ''}>
+                <ToggleContainer readOnly {...props} className={toggleActive === 3 ? 'toggle active' : 'toggle'}>
                     <TextAlignRight size={20} />
                 </ToggleContainer>
             )

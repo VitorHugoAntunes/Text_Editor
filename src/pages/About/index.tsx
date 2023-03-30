@@ -16,8 +16,22 @@ export function About() {
                 </div>
             </AboutHeaderContainer>
             <div>
-                <p>Block code</p>
+                <pre>
+                    <code className='codeBlock' aria-readonly={'true'}>
+                        <p>
+                            /**
+                        </p>
+                        <p>  * Editor de texto criado com Reactjs + Typescript</p>
+                        <p>  * Documentação usada como base: <a href="https://www.google.com/search?client=firefox-b-d&q=reactjs+documentation" target="_blank">Documentação React</a></p>
+                        <p>  * Inspiração em designs diversos: <a href="https://dribbble.com/" target="_blank">Dribbble</a> </p>
+                        <p>  * Para o deploy deste site foi utilizado: <a href="https://www.netlify.com/" target="_blank">Netlify</a></p>
+                        <p>  * Criado por: <a href="https://github.com/VitorHugoAntunes" target="_blank">Vitor Hugo Antunes</a></p>
+                        <p>
+                            */
+                        </p>
+                    </code>
+                </pre>
             </div>
-        </AboutContainer>
+        </AboutContainer >
     )
 }

@@ -15,6 +15,7 @@ interface ButtonContextType {
   changeIndentStatus: () => void
   copyTextToClipboard: (text: string) => void
   changeMenuStatus: () => void
+  setMenuActive: (menuActive: boolean) => void
 }
 
 interface ButtonProviderProps {
@@ -75,7 +76,8 @@ export function ButtonProvider({ children }: ButtonProviderProps) {
         changeUppercaseStatus,
         changeIndentStatus,
         copyTextToClipboard,
-        changeMenuStatus
+        changeMenuStatus,
+        setMenuActive
       }}
     >
       {children}

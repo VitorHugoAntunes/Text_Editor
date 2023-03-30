@@ -1,4 +1,4 @@
-import { type ButtonHTMLAttributes, type ReactNode, useState } from 'react'
+import { type ButtonHTMLAttributes, type ReactNode, useState, useEffect } from 'react'
 import { useButtonContext } from '../../hooks/useButtonContext'
 import { useTextAreaContext } from '../../hooks/useTextAreaContext'
 
@@ -19,7 +19,7 @@ export function Button({ icon, typeButton, ...props }: ButtonProps) {
     changeUppercaseStatus,
     changeIndentStatus,
     copyTextToClipboard,
-    changeMenuStatus
+    changeMenuStatus,
   } = useButtonContext()
 
   const { text } = useTextAreaContext()
@@ -43,7 +43,7 @@ export function Button({ icon, typeButton, ...props }: ButtonProps) {
       case 'copyToClipboard':
         return [copyTextToClipboard(text)]
       case 'moreOptions':
-        return [handleActiveButton(), changeMenuStatus()]
+        return [changeMenuStatus()]
     }
   }
   return (

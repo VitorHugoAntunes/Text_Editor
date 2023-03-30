@@ -27,7 +27,7 @@ export function SubmitButton() {
         pdf.save('MeuDocumento.pdf')
     }
     return (
-        <SubmitContainer>
+        <SubmitContainer id="submitText">
             <SubmitButtonComponent type="submit" onClick={handleExportPDF}>Exportar texto</SubmitButtonComponent>
         </SubmitContainer>
     )

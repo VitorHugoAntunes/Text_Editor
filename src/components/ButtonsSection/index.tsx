@@ -32,7 +32,7 @@ import { useToggleContext } from '../../hooks/useToggleContext'
 import { useButtonContext } from '../../hooks/useButtonContext'
 
 export function ButtonsSection() {
-  const { menuActive } = useButtonContext()
+  const { menuActive, setMenuActive } = useButtonContext()
   const { handleChangeToggleStatus } = useToggleContext()
 
   return (
@@ -61,9 +61,10 @@ export function ButtonsSection() {
         />
       </TextStyleSection>
 
-      <TextAlignSection>
+      <TextAlignSection className='alignSection'>
         {toggleTextAlign.map(button => (
           <Toggle
+            className='toggleList'
             key={button.id}
             title={button.title}
             typeInput={button.typeInput}
@@ -71,8 +72,6 @@ export function ButtonsSection() {
             onClick={() => handleChangeToggleStatus(button.id)}
           ></Toggle>
         ))}
-
-
       </TextAlignSection>
       <TextSpacingSection>
         <Button
@@ -118,7 +117,7 @@ export function ButtonsSection() {
             typeButton="moreOptions"
           />
           {menuActive && (
-            <ul>
+            <ul id='menuList' onClick={() => setMenuActive(false)} className='menuList'>
               <a href="https://github.com/VitorHugoAntunes" target="_blank">
                 <li>Meu Github</li>
               </a>
