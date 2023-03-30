@@ -10,6 +10,7 @@ interface TextAreaProps {
   alignRight?: boolean
   indent?: boolean
   fontSize: number
+  lineSpacing: number
 }
 
 export const TextareaContainer = styled.textarea<TextAreaProps>`
@@ -22,6 +23,7 @@ export const TextareaContainer = styled.textarea<TextAreaProps>`
   border: none;
   padding: 1.5rem;
   font-size: ${(props) => props.fontSize}px;
+  line-height: ${(props) => props.lineSpacing};
 
   ${(props) =>
     props.bold === true &&

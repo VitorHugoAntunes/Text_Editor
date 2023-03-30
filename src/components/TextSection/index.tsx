@@ -9,7 +9,7 @@ import { TextareaContainer } from './styles'
 export function TextSection() {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const { boldActive, italicActive, underlineActive, uppercaseActive, indentActive } = useButtonContext()
-  const { fontSize } = useInputContext()
+  const { fontSize, lineSpacing } = useInputContext()
   const { alignLeftActive, centerTextActive, alignRightActive } = useToggleContext();
   const { text, setText } = useTextAreaContext()
 
@@ -30,6 +30,7 @@ export function TextSection() {
       alignRight={alignRightActive}
       centerText={centerTextActive}
       fontSize={fontSize}
+      lineSpacing={lineSpacing}
       indent={indentActive}
       value={text}
       onChange={changeUserText}

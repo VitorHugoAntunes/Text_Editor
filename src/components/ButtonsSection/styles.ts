@@ -4,6 +4,8 @@ export const ButtonsContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap; 
+  -ms-wrap-margin: 1rem;
 
   > section {
     display: flex;
@@ -26,12 +28,12 @@ export const ButtonsContainer = styled.div`
       border-bottom-left-radius: 4px;
     }
 
-    > button:last-child, div:last-child,input:last-child {
+    > button:last-child, button + div > button, div:last-child,input:last-child {
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
     }
 
-    > button:not(:last-child), div:first-child, div + div, input:not(:last-child) {
+    > button:not(:last-child), div:first-child, div.toggle:not(:last-child) {
       border-right: 1px solid ${(props) => props.theme['gray-600']};
     }
 

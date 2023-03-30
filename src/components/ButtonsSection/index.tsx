@@ -36,7 +36,7 @@ export function ButtonsSection() {
   const { handleChangeToggleStatus } = useToggleContext()
 
   return (
-    <ButtonsContainer>
+    <ButtonsContainer id='buttons'>
       <TextStyleSection>
         <Button
           title="Texto em negrito"
@@ -74,9 +74,7 @@ export function ButtonsSection() {
         ))}
       </TextAlignSection>
       <TextSpacingSection>
-        <Button
-          title="Espaçamento de linha"
-          icon={<ArrowsOutLineVertical size={20} />}
+        <Input
           typeButton="lineSpacing"
         />
         <Button
@@ -87,7 +85,6 @@ export function ButtonsSection() {
       </TextSpacingSection>
       <LinkSection>
         <Input
-          title="Tamanho de fonte"
           type="number"
           typeButton="fontSize"
           placeholder="14"
