@@ -6,6 +6,7 @@ import { useInputContext } from '../../hooks/useInputContext'
 import { Plus, Minus, ArrowsOutLineVertical, TextAa } from 'phosphor-react'
 
 import { InputComponent, InputContainer } from './styles'
+import { useButtonContext } from '../../hooks/useButtonContext'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   typeButton: string
@@ -41,7 +42,7 @@ export function Input({ typeButton, size, ...props }: InputProps) {
   }
 
   return (
-    <InputContainer>
+    <InputContainer className='inputContainerDiv'>
       <div title={typeButton === 'lineSpacing' ? 'Espaçamento de linha' : 'Tamaho de fonte'} className="inputDiv">
         {typeButton === 'lineSpacing' ? (
           <ArrowsOutLineVertical size={20} />

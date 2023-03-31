@@ -11,7 +11,7 @@ export const InputContainer = styled.div`
   font-size: 1rem;
 
   svg {
-        color: ${props => props.theme['gray-100']};
+    color: ${props => props.theme['gray-100']};
   }
 
   .inputDiv {
@@ -28,7 +28,7 @@ export const InputContainer = styled.div`
     align-items: center;
     justify-content: center;
     border: none;
-    background: none;
+    background: none; // ARRUMAAAAAAAAAAAAAR
     width: 2.8rem;
     height: 2.8rem;
     cursor: pointer;

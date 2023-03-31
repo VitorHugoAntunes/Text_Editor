@@ -48,6 +48,7 @@ export function Button({ icon, typeButton, ...props }: ButtonProps) {
   }
   return (
     <ButtonComponent
+      className={buttonActive ? 'buttonActive' : ''}
       onClick={() => handleChangeButtonStatus(typeButton)}
       {...props}
       isActive={buttonActive}

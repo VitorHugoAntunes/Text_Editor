@@ -33,7 +33,7 @@ export const ButtonsContainer = styled.div`
       border-bottom-right-radius: 4px;
     }
 
-    > button:not(:last-child), div:first-child, div.toggle:not(:last-child) {
+    body.dark & > button:not(:last-child),body.dark & > div:first-child,body.dark & > div.toggle:not(:last-child) {
       border-right: 1px solid ${(props) => props.theme['gray-600']};
     }
 

@@ -23,9 +23,7 @@ export const ButtonComponent = styled.button<ButtonProps>`
     background: ${(props) => props.theme['gray-800']};
   }
 
-  ${(props) =>
-    props.isActive === true &&
-    css`
-      background: ${(props) => props.theme['gray-600']};
-    `}
+  &.buttonActive {
+    background: ${(props) => props.theme['gray-600']};
+  }
 `

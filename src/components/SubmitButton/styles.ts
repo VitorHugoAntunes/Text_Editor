@@ -15,4 +15,9 @@ export const SubmitButtonComponent = styled.button`
   background: ${(props) => props.theme['gray-100']};
   color: ${(props) => props.theme['gray-900']};
   cursor: pointer;
+
+  &:hover {
+    transition: 0.2s;
+    background: ${(props) => props.theme['gray-400']};
+  }
 `

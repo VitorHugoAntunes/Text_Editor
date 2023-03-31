@@ -1,13 +1,16 @@
+import { useEffect } from 'react'
+
 import {
   TextBolder,
   TextItalic,
   TextAa,
   TextIndent,
-  ArrowsOutLineVertical,
   DotsThreeVertical,
   Palette,
   TextUnderline,
   CopySimple,
+  Sun,
+  Moon,
 } from 'phosphor-react'
 
 import { Toaster } from 'react-hot-toast'
@@ -32,8 +35,10 @@ import { useToggleContext } from '../../hooks/useToggleContext'
 import { useButtonContext } from '../../hooks/useButtonContext'
 
 export function ButtonsSection() {
-  const { menuActive, setMenuActive } = useButtonContext()
+  const { menuActive, setMenuActive, theme, changeTheme } = useButtonContext()
   const { handleChangeToggleStatus } = useToggleContext()
+
+  document.body.className = theme === 'dark' ? 'dark' : 'light';
 
   return (
     <ButtonsContainer id='buttons'>
@@ -103,8 +108,9 @@ export function ButtonsSection() {
       <MoreActionsSection>
         <Button
           title="Tema"
-          icon={<Palette size={20} weight="bold" />}
+          icon={theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           typeButton="theme"
+          onClick={changeTheme}
         />
         <div className='menuToggle'>
           <Button

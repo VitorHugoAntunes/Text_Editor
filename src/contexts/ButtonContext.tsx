@@ -8,6 +8,7 @@ interface ButtonContextType {
   uppercaseActive: boolean
   indentActive: boolean
   menuActive: boolean
+  theme: string
   changeBoldStatus: () => void
   changeItalicStatus: () => void
   changeUnderlineStatus: () => void
@@ -16,6 +17,7 @@ interface ButtonContextType {
   copyTextToClipboard: (text: string) => void
   changeMenuStatus: () => void
   setMenuActive: (menuActive: boolean) => void
+  changeTheme: () => void
 }
 
 interface ButtonProviderProps {
@@ -31,6 +33,7 @@ export function ButtonProvider({ children }: ButtonProviderProps) {
   const [uppercaseActive, setUppercaseActive] = useState(false)
   const [indentActive, setIndentActive] = useState(false)
   const [menuActive, setMenuActive] = useState(false)
+  const [theme, setTheme] = useState('dark')
 
   function changeBoldStatus() {
     boldActive ? setBoldActive(false) : setBoldActive(true)
@@ -61,6 +64,10 @@ export function ButtonProvider({ children }: ButtonProviderProps) {
     menuActive ? setMenuActive(false) : setMenuActive(true)
   }
 
+  function changeTheme() {
+    theme === 'dark' ? setTheme('light') : setTheme('dark')
+  }
+
   return (
     <ButtonContext.Provider
       value={{
@@ -70,6 +77,7 @@ export function ButtonProvider({ children }: ButtonProviderProps) {
         uppercaseActive,
         indentActive,
         menuActive,
+        theme,
         changeBoldStatus,
         changeItalicStatus,
         changeUnderlineStatus,
@@ -77,7 +85,8 @@ export function ButtonProvider({ children }: ButtonProviderProps) {
         changeIndentStatus,
         copyTextToClipboard,
         changeMenuStatus,
-        setMenuActive
+        setMenuActive,
+        changeTheme
       }}
     >
       {children}
