@@ -21,10 +21,12 @@ export function Input({ typeButton, size, ...props }: InputProps) {
         if (fontSize < 30) {
           return setFontSize(fontSize + 1)
         }
+        break;
       case 'lineSpacing':
         if (lineSpacing < 2) {
           return setLineSpacing(lineSpacing + 0.1)
         }
+        break;
     }
   }
 
@@ -34,10 +36,12 @@ export function Input({ typeButton, size, ...props }: InputProps) {
         if (fontSize > 8) {
           return setFontSize(fontSize - 1)
         }
+        break;
       case 'lineSpacing':
         if (lineSpacing > 1) {
           return setLineSpacing(lineSpacing - 0.1)
         }
+        break;
     }
   }
 

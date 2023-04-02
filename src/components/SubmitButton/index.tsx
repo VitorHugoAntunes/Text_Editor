@@ -22,7 +22,23 @@ export function SubmitButton() {
 
         pdf.setFontSize(fontSize)
 
-        pdf.text(text, 20, 30)
+        // Quebrando o conteudo do pdf em novas linhas caso passe da largura limite
+
+        const textLines = pdf.splitTextToSize(text, 170)
+
+        let cursorY = 20;
+
+        // Adicionando nova pagina do PDF caso a altura de todas as linhas seja maior que a altura da pagina atual
+
+        textLines.forEach((line: string) => {
+            if (cursorY + 5 > pdf.internal.pageSize.height - 20) {
+                // adicionar nova página se o texto exceder a altura restante da página
+                pdf.addPage();
+                cursorY = 20;
+            }
+            pdf.text(line, 20, cursorY);
+            cursorY += 5;
+        });
 
         pdf.save('MeuDocumento.pdf')
     }
