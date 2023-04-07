@@ -47,7 +47,7 @@ export function Input({ typeButton, size, ...props }: InputProps) {
 
   return (
     <InputContainer className='inputContainerDiv'>
-      <div title={typeButton === 'lineSpacing' ? 'Espaçamento de linha' : 'Tamaho de fonte'} className="inputDiv">
+      <div title={typeButton === 'lineSpacing' ? 'Espaçamento de linha' : 'Tamanho de fonte'} className="inputDiv">
         {typeButton === 'lineSpacing' ? (
           <ArrowsOutLineVertical size={20} />
         ) : (
